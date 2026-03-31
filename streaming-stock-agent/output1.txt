@@ -1,0 +1,29 @@
+Session: cli_session
+Query: Compare AAPL and MSFT
+------------------------------------------------------------
+
+[Tool calls starting...]
+
+[Calling tool: compare_stocks with args {'symbol1': 'AAPL', 'symbol2': 'MSFT'}]
+[Tool calls completed]
+
+Here's a comparison of Apple (AAPL) vs Microsoft (MSFT):
+
+**Apple Inc. (AAPL)**  
+- Current Price: $260.83 (+0.37% today)  
+- Market Cap: $3.8 trillion  
+
+**Microsoft Corporation (MSFT)**  
+- Current Price: $405.76 (-0.89% today)  
+- Market Cap: $3.0 trillion  
+
+**Key Notes:**  
+- Apple's stock price is lower but it has a larger market cap due to more shares outstanding.  
+- Microsoft's shares are more expensive per share but down slightly today.  
+- Both are tech giants but with different market performances recently.  
+
+*Data from Yahoo Finance (delayed by ~15-20 minutes)*. Let me know if you'd like to dig into more details about either company!
+[Done]
+
+============================================================
+

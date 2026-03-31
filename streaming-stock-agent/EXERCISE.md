@@ -175,7 +175,21 @@ uv run python test_client.py > output3.txt
 
 After completing the exercise, reflect on:
 1. How did the LLM know to call your new tool?
+
+> ***The LLM knew to call compare_stocks because of the description field in the tool schema. When I write "use this when the user wants to compare two stocks or asks which of the two stocks are better", I am teaching the model when to reach for each particular tool. The LLM does not see any Python code at all; it reads the schema like the menu and matches the user's intent to the description that fits best and fill in the according parameters.*** 
+
 2. What happens if the tool schema description is unclear?
+
+> ***If the description is vague, the LLM might either call the wrong tool or does not call any tool at all. It may answer from its own base memory instead. I can imagine writing something like "get stocks info for two tickers..." without mentionining comparison. The model may reach for get_stock_price instead of comparing the two. The more specific the description, the more exact the model can be.*** 
+
 3. How does the agent decide between `compare_stocks` and `get_stock_price`?
+
+> ***This is similar to the above answer. It comes down to reading the descriptions fully as a set. 'get_stock_price' says "use this when the user asks about the current price... of a ticker," while 'compare_stocks' says "use this when the user wants to compare two stocks." When I typed "Compare AAPL and MSFT," the word "compare" and the presence of two symbols pointed clearly at compare_stocks. The model will be doing a quick best-match across all available tool descriptions, which is exactly why writing them carefully and distinctly from each other matters.*** 
+
 4. How would you add validation for parameter values?
+
+> ***Inside _compare_stocks(), I'd add a check before calling yf.Ticker() — something like. verifying the symbol is a non-empty string with only letters and maybe a dot or dash (e.g., BRK.B). I could also return a friendly error dict like {"error": "Invalid symbol: ..."} rather than crashing, which is the same pattern already used in _get_stock_price().*** 
+
 5. What if the user asks to compare 3 stocks instead of 2?
+
+> ***The current schema only accepts symbol1 and symbol2, so a request like "Compare Apple Microsoft, and Google" would either be mishandled or the model would call compare_stocks twice (AAPL vs MSFT, then AAPL vs GOOGL). To properly support 3+ stocks, I'd change the schema to accept a list parameter.  to loop through all symbols and return a list of results. The prompt description would also need updating to signal that the tool supports multi-stock comparison. It's a small change in schema, but it shows how much the schema design shapes what the whole system can do.***

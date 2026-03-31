@@ -56,3 +56,4 @@ uv.lock
 debug.log
 *.log
 .scratchpad/
+.env.example

@@ -1,0 +1,49 @@
+Session: cli_session
+Query: Show me AAPL stock
+------------------------------------------------------------
+
+[Tool calls starting...]
+
+[Calling tool: get_stock_price with args {'ticker': 'AAPL'}]
+[Tool calls completed]
+
+Here's the latest information for **Apple (AAPL)** as of 5:13 PM EDT (delayed by ~15-20 minutes):
+
+**Current Price:** $260.83  
+**Previous Close:** $259.88  
+**Change:** +$0.95 (+0.37%)  
+
+The stock is trading in the **post-market** session. Let me know if you'd like to see historical trends, company fundamentals, or other details!
+[Done]
+
+============================================================
+
+Session: cli_session
+Query: Now compare it with GOOGL
+------------------------------------------------------------
+
+[Tool calls starting...]
+
+[Calling tool: compare_stocks with args {'symbol1': 'AAPL', 'symbol2': 'GOOGL'}]
+[Tool calls completed]
+
+Here's **Apple (AAPL)** vs **Alphabet (GOOGL)**:
+
+**Apple Inc. (AAPL)**  
+- **Current Price**: $260.83 (+0.37% today)  
+- **Market Cap**: $3.8 trillion  
+
+**Alphabet Inc. (GOOGL)**  
+- **Current Price**: $307.04 (+0.22% today)  
+- **Market Cap**: $3.7 trillion  
+
+### Key Notes:
+- **Similar Valuations**: Both are near $3.7-3.8T in market cap, but Apple has more shares outstanding (~16.5B vs Alphabet’s ~5.1B).  
+- **Price Action**: Apple’s shares outperformed slightly today, though both are up fractionally.  
+- **Sector Difference**: Apple is hardware/software-driven, while Alphabet relies heavily on advertising revenue.  
+
+*Data from Yahoo Finance (delayed by ~15-20 minutes)*. Want to dive deeper into either company’s financials or growth metrics?
+[Done]
+
+============================================================
+

@@ -125,10 +125,10 @@ advanced-agentic-patterns/
 ### Problem 1: Streaming Stock Agent (50 points)
 
 **Deliverables**:
-- [ ] Implemented `_compare_stocks()` function in [agent.py](streaming-stock-agent/agent.py)
-- [ ] Tool schema added to `STOCK_TOOLS` list
-- [ ] Test output files: `output1.txt`, `output2.txt`, `output3.txt`
-- [ ] Code follows project standards (type hints, docstrings, error handling)
+- [X] Implemented `_compare_stocks()` function in [agent.py](streaming-stock-agent/agent.py)
+- [X] Tool schema added to `STOCK_TOOLS` list
+- [X] Test output files: `output1.txt`, `output2.txt`, `output3.txt`
+- [X] Code follows project standards (type hints, docstrings, error handling)
 
 **Evaluation Criteria**:
 - Correct tool schema definition (15 points)
